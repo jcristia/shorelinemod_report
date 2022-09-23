@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .DS_Store
+.here
 
 knitr-cache-docx
 knitr-cache-pdf
@@ -16,4 +17,4 @@ data
 *.knit.md
 *.log
 *.Rproj
-.here
+
