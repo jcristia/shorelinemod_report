@@ -1,0 +1,12 @@
+# Results
+
+- A few sentences on the spatial distribution (e.g. more modifications in the south, more ag in south, more forestry in north).
+
+```{r exampleareas, fig.pos="H", fig.cap = "Shoreline modifications within 100 meter buffered areas. The six selected areas are shown for example and do not imply any significance over other areas."}
+knitr::include_graphics(here::here("figures/02_shorelinemod_examples.png"))
+```
+
+
+```{r percentmod, fig.pos="H", fig.cap = "The percentage of the shoreline buffer modified."}
+knitr::include_graphics(here::here("figures/03_shorelinemod_percentage.png"))
+```

@@ -1,0 +1,31 @@
+# Methods
+
+## Seagrass spatial data
+
+- Seagrass, eelgrass, japonica
+- Bioregions
+- Data sources (ref my paper here)
+
+## Shoreline area
+
+- Justification (cite DFO reports, Iacarella, Nagel)
+- Adjusting seagrass meadows (or just generally say we created it at the nearest shoreline)
+- General geoprocessing steps
+
+## Shoreline modifications
+
+- Modifications we are looking for and why (Emily's 2020 paper has some additional citations for impacts that I don't have)
+- Also, will need to say why I'm not including docks - its categorized elsewhere because of different impacts.
+- digitizing - general rules
+- attributes
+
+## Postprocessing
+
+- Roads
+- General geoprocessing steps
+- Calculate as percentage of buffer and associate as attribute
+
+```{r studyareafig, fig.pos="H", fig.cap = "Study area"}
+knitr::include_graphics(here::here("figures/01_studyarea.png"))
+```
+
