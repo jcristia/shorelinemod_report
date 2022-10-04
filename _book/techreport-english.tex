@@ -71,17 +71,16 @@
 \newcommand{\trReportNum}{nnn}
 % Optional
 \newcommand{\trAuthFootA}{Email: \link{mailto:John.Cristiani@dfo-mpo.gc.ca}{\nolinkurl{John.Cristiani@dfo-mpo.gc.ca}} \textbar{} telephone: (250) 756-5555}
-\newcommand{\trAuthsLong}{John M. Cristiani\textsuperscript{1} Katherine H. Bannar-Martin\textsuperscript{2} and Emily M. Rubidge\textsuperscript{3}}
+\newcommand{\trAuthsLong}{John M. Cristiani\textsuperscript{1} Katherine H. Bannar-Martin\textsuperscript{2} and Emily M. Rubidge\textsuperscript{2}}
 \newcommand{\trAuthsBack}{Cristiani, J.C., Bannar-Martin, K.H, and Rubidge, E.M.}
 
 % New definition: Address
 \newcommand{\trAddy}{\textsuperscript{1}Pacific Biological Station\\
 Fisheries and Oceans Canada, 3190 Hammond Bay Road\\
 Nanaimo, British Columbia, V9T 6N7, Canada\\
-\textsuperscript{2}Far, far away\\
-Another Galaxy\\
-\textsuperscript{3}Far, far away\\
-Another Galaxy}
+\textsuperscript{2}Institute of Ocean Sciences\\
+Fisheries and Oceans Canada, 9860 W Saanich Road\\
+Sidney, British Columbia, V8L 4B2, Canada\\}
 
 % Abstract
 \newcommand{\trAbstract}{Here is the abstract text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
@@ -185,17 +184,13 @@ The objective of this study is to map and quantify the shoreline modifications a
 
 \hypertarget{seagrass-spatial-data}{%
 \subsection{Seagrass spatial data}\label{seagrass-spatial-data}}
-\begin{itemize}
 
-\item
-  Seagrass, eelgrass, japonica
-\item
-  Bioregions
-\item
-  Data sources (ref my paper here)
-\end{itemize}
+Eelgrass (\emph{Z. marina}) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, \emph{Zostera japonica}, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km\textsuperscript{2} in size (\protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). We used a spatial dataset of seagrass in the Salish Sea compiled in Cristiani et al. (\protect\hyperlink{ref-Cristiani2021}{2021}), which consists of surveyed and modeled data from a variety of government and non-governmental sources. The dataset includes xyz meadows in the Strait of Georgia Bioregion as well as meadows in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion.
+
 \hypertarget{shoreline-area}{%
 \subsection{Shoreline area}\label{shoreline-area}}
+
+Remember, the methods should be the most detailed part.
 \begin{itemize}
 
 \item
@@ -205,6 +200,10 @@ The objective of this study is to map and quantify the shoreline modifications a
 \item
   General geoprocessing steps
 \end{itemize}
+We measured shoreline modifcations within at 100m buffer onto land from a seagrass meadow.
+
+\ldots requires generating consistent buffers from onto land. The perimeter of the meadows, however, do not always abut directly to the shoreline due to different mapping accuracies and errors, thus resulting in slightly different buffer extents on to land. Aside from a few exceptions, the majority of meadows are adjacent to coastline and therefore to create consistent buffers we adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
+
 \hypertarget{shoreline-modifications}{%
 \subsection{Shoreline modifications}\label{shoreline-modifications}}
 \begin{itemize}
@@ -308,28 +307,31 @@ The objective of this study is to map and quantify the shoreline modifications a
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
 \leavevmode{\hypertarget{ref-ClarkeMurray2015}{}}%
-Clarke Murray, C., Agbayani, S., Alidina, H.M., and Ban, N.C. 2015. \link{https://doi.org/10.1016/j.marpol.2015.04.003}{Advancing marine cumulative effects mapping: An update in canada's pacific waters}. Marine Policy 58: 71--77.
+Clarke Murray, C., Agbayani, S., Alidina, H.M., and Ban, N.C. 2015. \link{https://doi.org/10.1016/j.marpol.2015.04.003}{Advancing marine cumulative effects mapping: {An} update in {Canada}'s {Pacific} waters}. Marine Policy 58: 71--77.
+
+\leavevmode{\hypertarget{ref-Cristiani2021}{}}%
+Cristiani, J., Rubidge, E., Forbes, C., Moore-Maley, B., and O'Connor, M.I. 2021. \link{https://doi.org/10.3389/fmars.2021.717469}{A {Biophysical Model} and {Network Analysis} of {Invertebrate Community Dispersal Reveals Regional Patterns} of {Seagrass Habitat Connectivity}}. Frontiers in Marine Science 8: 1--19.
 
 \leavevmode{\hypertarget{ref-DFO2019}{}}%
-DFO. 2019. Design strategies for the northern shelf bioregion marine protected area network. CSAS.
+DFO. 2019. Design strategies for the {Northern Shelf Bioregion Marine Protected Area Network}. CSAS.
 
 \leavevmode{\hypertarget{ref-Halpern2019}{}}%
-Halpern, B.S., Frazier, M., Afflerbach, J., Lowndes, J.S., Micheli, F., O'Hara, C., Scarborough, C., and Selkoe, K.A. 2019. \link{https://doi.org/10.1038/s41598-019-47201-9}{Recent pace of change in human impact on the world's ocean}. Scientific Reports 9(1): 1--8.
+Halpern, B.S., Frazier, M., Afflerbach, J., Lowndes, J.S., Micheli, F., O'NAHara, C., Scarborough, C., and Selko, K.A. 2019. \link{https://doi.org/10.1038/s41598-019-47201-9}{Recent pace of change in human impact on the world's ocean}. Scientific Reports 9(1): 1--8.
 
 \leavevmode{\hypertarget{ref-Iacarella2018}{}}%
 Iacarella, J.C., Adamczyk, E., Bowen, D., Chalifour, L., Eger, A., Heath, W., Helms, S., Hessing-Lewis, M., Hunt, B.P.V., MacInnis, A., O'Connor, M.I., Robinson, C.L.K., Yakimishyn, J., and Baum, J.K. 2018. \link{https://doi.org/10.1111/gcb.14090}{Anthropogenic disturbance homogenizes seagrass fish communities}. Global Change Biology 24(5): 1904--1918.
 
 \leavevmode{\hypertarget{ref-Murphy2021a}{}}%
-Murphy, G.E.P., Dunic, J.C., Adamczyk, E.M., Bittick, S.J., Côté, I.M., Cristiani, J., Geissinger, E.A., Gregory, R.S., Lotze, H.K., O'Connor, M.I., Araújo, C.A.S., Rubidge, E.M., Templeman, N.D., and Wong, M.C. 2021. \link{https://doi.org/10.1139/facets-2020-0020}{From coast to coast to coast~: Ecology and management of seagrass ecosystems across canada}. Facets 6: 1--41.
+Murphy, G.E.P., Dunic, J.C., Adamczyk, E.M., Bittick, S.J., Côt'e, I.M., Cristiani, J., Geissinger, E.A., Gregory, R.S., Lotze, H.K., O'Connor, M.I., Ara'ujo, C.A.S., Rubidge, E.M., Templeman, N.D., and Wong, M.C. 2021. \link{https://doi.org/10.1139/facets-2020-0020}{From coast to coast to coast~: Ecology and management of seagrass ecosystems across {Canada}}. Facets 6: 1--41.
 
 \leavevmode{\hypertarget{ref-Nagel2020}{}}%
-Nagel, E.J., Murphy, G.E.P., Fast, J., Bittick, S.J., Adamczyk, M., Connor, M.I.O., Wong, M.C., and Lotze, H.K. 2020. Application of a coastal human impact metric and nitrogen loading model to 10 eelgrass ( zostera marina ) meadows in british columbia. Fisheries; Oceans Canada.
+Nagel, E.J., Murphy, G.E.P., Fast, J., Bittick, S.J., Adamczyk, M., Connor, M.I.O., Wong, M.C., and Lotze, H.K. 2020. Application of a coastal human impact metric and nitrogen loading model to 10 eelgrass ( {Zostera} marina ) meadows in {British Columbia}. {Fisheries and Oceans Canada}.
 
 \leavevmode{\hypertarget{ref-Nahirnick2019}{}}%
-Nahirnick, N.K., Costa, M., Schroeder, S., and Sharma, T. 2019. \link{https://doi.org/10.2112/jcoastres-d-18-00112.1}{Long-term eelgrass habitat change and associated human impacts on the west coast of canada}. Journal of Coastal Research 36(1): 30.
+Nahirnick, N.K., Costa, M., Schroeder, S., and Sharma, T. 2019. \link{https://doi.org/10.2112/jcoastres-d-18-00112.1}{Long-{Term Eelgrass Habitat Change} and {Associated Human Impacts} on the {West Coast} of {Canada}}. Journal of Coastal Research 36(1): 30.
 
 \leavevmode{\hypertarget{ref-Rubidge2020}{}}%
-Rubidge, E., Jeffery, S., Gregr, E.J., Gale, K.S.P., and Frid, A. 2020. Assessment of nearshore features in the northern shelf bioregion against criteria for determining ecologically and biologically significant areas ( EBSAs ). DFO Canadian Science Advisory Secretariat. Canadian Science Advisory Secretariat.
+Rubidge, E., Jeffery, S., Gregr, E.J., Gale, K.S.P., and Frid, A. 2020. Assessment of nearshore features in the {Northern Shelf Bioregion} against criteria for determining {Ecologically} and {Biologically Significant Areas} ( {EBSAs} ). DFO Canadian Science Advisory Secretariat. {Canadian Science Advisory Secretariat}.
 
 \leavevmode{\hypertarget{ref-Todd2019}{}}%
 Todd, P.A., Heery, E.C., Loke, L.H.L., Thurstan, R.H., Kotze, D.J., and Swan, C. 2019. \link{https://doi.org/10.1111/oik.05946}{Towards an urban marine ecology: Characterizing the drivers, patterns and processes of marine ecosystems in coastal cities}. Oikos: 1215--1242.
