@@ -1,18 +1,25 @@
 # Discussion
 
-- summary paragraph
-- spatial distribution of activities and the significance for management
-- assumptions and limitations
-  - No point measurements in field to confirm impacts. Some activities are well regulated in Canada, like logging, and there may be very minimal impact.
-  - Meadows that aren’t right on the coast may not experience any impacts
-  - If the modification exists behind some vegetation then the impact may be less (cite Iacarella)
-  - We use a uniform buffer, but there is a likely a distance decay for some of these activities.
-- Future directions
-  - incorporate vulnerability scores to specific types of modifications
-  - Consider management goals of protecting the most natural meadows and how this might change given the spatial distribution of activities and other information (e.g. biodiversity in meadows, connectivity)
+(*first paragraph: summary sentences and some management goal stuff)
 
-- some stuff from my thesis:
-  - "managing seagrass habitat and associated species in a landscape context, in which patterns of distribution, dispersal, and impacts will interact to influence regional management strategies (Murphy et al. 2021b). Although eelgrass is declining globally (Dunic et al. 2021), eelgrass in nearby Puget Sound, Washington is stable and resilient overall, despite a significant increase in local human and climactic stressors (Shelton et al. 2016). Assessing the relevance of managing for human impacts in the Salish Sea will therefore require a deeper understanding of seagrass and invertebrate responses to stressors and the mechanisms (e.g., dispersal) that allow for resilience to these stressors. Ultimately, refining and validating our models will increase their utility and promote their incorporation into broader marine spatial planning efforts."
+By quantifying shoreline modifications adjacent to seagrass meadows, we've provided a novel high resolution dataset for documenting land use over a large spatial extent and predicting potential impacts to nearshore ecosystems. The variation of the distribution and patterns of modifications across the region illustrate the different threats that seagrass meadows face based on their location. Few meadows had no adjacent modifications, but even then, shoreline modifications are only one type of activity that can threaten a seagrass meadow. If an area including a meadow is selected for management, then its likely the shoreline modifications will have to be considered, and the type of management action will vary with the type of modification. For example, limiting forestry activities vs. managing activities on private land and managing the flow of sewage outflow. Consider management goals of protecting the most natural meadows and how this might change given the spatial distribution of activities and other information (e.g. biodiversity in meadows, connectivity)
+See how Emily's EBSA paper discusses some of this.
+
+(*2nd: vulnerability score variability)
+- This work can be incorporated into CI frameworks (e.g. REFS)
+- incorporate vulnerability scores to specific types of modifications (cite CI research)
+- some stuff from my thesis: "managing seagrass habitat and associated species in a landscape context, in which patterns of distribution, dispersal, and impacts will interact to influence regional management strategies (Murphy et al. 2021b). Although eelgrass is declining globally (Dunic et al. 2021), eelgrass in nearby Puget Sound, Washington is stable and resilient overall, despite a significant increase in local human and climactic stressors (Shelton et al. 2016). Assessing the relevance of managing for human impacts in the Salish Sea will therefore require a deeper understanding of seagrass and invertebrate responses to stressors and the mechanisms (e.g., dispersal) that allow for resilience to these stressors. Ultimately, refining and validating our models will increase their utility and promote their incorporation into broader marine spatial planning efforts."
+
+(*3rd: assumptions and limitations)
+
+When using and adapting the data for future studies, certain assumptions need to be considered.
+- If the modification exists behind some vegetation then the impact could be less.
+- We use a uniform buffer, but there is a likely a distance decay for some of these activities.
+- No point measurements in field to confirm the severity of impacts of different modifications. Some activities are well regulated in Canada, like logging, and there may be very minimal impact. Whereas, drainage of waste and stormwater from seemingly well vegetated residential areas may have a high impact but hard measure.
+- Meadows that aren’t right on the coast may not experience the same level of impacts as an intertidal meadow.
+- Ultimately, quantifying severity and vulnerability will increase the utility of this dataset for future marine spatial planning and management efforts. (should also work in to this idea something about this is connectivity terrestrial landscape features with seascape ecology.)
+
 
 # Data availability
-Link to github repo
+Link to code in github repo
+Link to dataset wherever it gets hosted

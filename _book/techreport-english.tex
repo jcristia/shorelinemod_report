@@ -185,8 +185,15 @@ The objective of this study is to map and quantify the shoreline modifications a
 \hypertarget{seagrass-spatial-data}{%
 \subsection{Seagrass spatial data}\label{seagrass-spatial-data}}
 
-Eelgrass (\emph{Z. marina}) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, \emph{Zostera japonica}, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km\textsuperscript{2} in size (\protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). We used a spatial dataset of seagrass in the Salish Sea compiled in Cristiani et al. (\protect\hyperlink{ref-Cristiani2021}{2021}), which consists of surveyed and modeled data from a variety of government and non-governmental sources. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the dataset, and it is best used for coarse estimates of extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure @ref:studyareafig).
+Eelgrass (\emph{Z. marina}) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, \emph{Zostera japonica}, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km\textsuperscript{2} in size (\protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). We used a spatial dataset of seagrass in the Salish Sea compiled in Cristiani et al. (\protect\hyperlink{ref-Cristiani2021}{2021}), which consists of surveyed and modeled data from a variety of government and non-governmental sources. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the dataset, and it is best used for coarse estimates of extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure~\ref{fig:studyareafig}).
+\begin{figure}[H]
 
+{\centering \pdftooltip{\includegraphics[width=6in]{figures/01_studyarea}}{Figure \ref{fig:studyareafig}} 
+
+}
+
+\caption{Study area. Finish caption on seagrass and bioregions.}\label{fig:studyareafig}
+\end{figure}
 \hypertarget{shoreline-area-adjacent-to-seagrass-meadows}{%
 \subsection{Shoreline area adjacent to seagrass meadows}\label{shoreline-area-adjacent-to-seagrass-meadows}}
 
@@ -223,21 +230,12 @@ Unclear & unclear\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}[H]
-
-{\centering \pdftooltip{\includegraphics[width=6in]{figures/01_studyarea}}{Figure \ref{fig:studyareafig}} 
-
-}
-
-\caption{Study area}\label{fig:studyareafig}
-\end{figure}
 \hypertarget{results}{%
 \section{Results}\label{results}}
-\begin{itemize}
 
-\item
-  A few sentences on the spatial distribution (e.g.~more modifications in the south, more ag in south, more forestry in north).
-\end{itemize}
+The spatial distribution of shoreline modifications varied across the region. Examples of the extent and diversity of modifications are shown in Figure~\ref{fig:exampleareas}, and the full dataset is accessible online (see Data availability section). As expected, the seagrass meadows with the highest total levels of adjacent shoreline modification occurred near population centers (Figure~\ref{fig:percentmod}). The lowest levels of modification occurred near islands and in the northern part of the study area (i.e.~Johnstone Strait). The dominant modification type tended to vary by latitude. For example, there is more coastal agriculture in the south and more logging in the north (Figure ).
+
+(\emph{TODO: make colors more bold in example figure.}) (\emph{TODO: add cities and towns to overall figure}) (\emph{TODO: do a full page figure for the 5 types. If these come after the total one, then I could try to fit them on one page.})
 \begin{figure}[H]
 
 {\centering \pdftooltip{\includegraphics[width=6in]{figures/02_shorelinemod_examples}}{Figure \ref{fig:exampleareas}} 
@@ -252,50 +250,25 @@ Unclear & unclear\\
 
 }
 
-\caption{The percentage of the shoreline buffer modified.}\label{fig:percentmod}
+\caption{The percentage of the shoreline buffered area that is modified.}\label{fig:percentmod}
 \end{figure}
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
-\begin{itemize}
 
-\item
-  summary paragraph
-\item
-  spatial distribution of activities and the significance for management
-\item
-  assumptions and limitations
-  \begin{itemize}
+(*first paragraph: summary sentences and some management goal stuff)
 
-  \item
-    No point measurements in field to confirm impacts. Some activities are well regulated in Canada, like logging, and there may be very minimal impact.
-  \item
-    Meadows that aren't right on the coast may not experience any impacts
-  \item
-    If the modification exists behind some vegetation then the impact may be less (cite Iacarella)
-  \item
-    We use a uniform buffer, but there is a likely a distance decay for some of these activities.
-  \end{itemize}
-\item
-  Future directions
-  \begin{itemize}
+By quantifying shoreline modifications adjacent to seagrass meadows, we've provided a novel high resolution dataset for documenting land use over a large spatial extent and predicting potential impacts to nearshore ecosystems. The variation of the distribution and patterns of modifications across the region illustrate the different threats that seagrass meadows face based on their location. Few meadows had no adjacent modifications, but even then, shoreline modifications are only one type of activity that can threaten a seagrass meadow. If an area including a meadow is selected for management, then its likely the shoreline modifications will have to be considered, and the type of management action will vary with the type of modification. For example, limiting forestry activities vs.~managing activities on private land and managing the flow of sewage outflow. Consider management goals of protecting the most natural meadows and how this might change given the spatial distribution of activities and other information (e.g.~biodiversity in meadows, connectivity) See how Emily's EBSA paper discusses some of this.
 
-  \item
-    incorporate vulnerability scores to specific types of modifications
-  \item
-    Consider management goals of protecting the most natural meadows and how this might change given the spatial distribution of activities and other information (e.g.~biodiversity in meadows, connectivity)
-  \end{itemize}
-\item
-  some stuff from my thesis:
-  \begin{itemize}
+(*2nd: vulnerability score variability) - This work can be incorporated into CI frameworks (e.g.~REFS) - incorporate vulnerability scores to specific types of modifications (cite CI research) - some stuff from my thesis: ``managing seagrass habitat and associated species in a landscape context, in which patterns of distribution, dispersal, and impacts will interact to influence regional management strategies (Murphy et al.~2021b). Although eelgrass is declining globally (Dunic et al.~2021), eelgrass in nearby Puget Sound, Washington is stable and resilient overall, despite a significant increase in local human and climactic stressors (Shelton et al.~2016). Assessing the relevance of managing for human impacts in the Salish Sea will therefore require a deeper understanding of seagrass and invertebrate responses to stressors and the mechanisms (e.g., dispersal) that allow for resilience to these stressors. Ultimately, refining and validating our models will increase their utility and promote their incorporation into broader marine spatial planning efforts.''
 
-  \item
-    ``managing seagrass habitat and associated species in a landscape context, in which patterns of distribution, dispersal, and impacts will interact to influence regional management strategies (Murphy et al.~2021b). Although eelgrass is declining globally (Dunic et al.~2021), eelgrass in nearby Puget Sound, Washington is stable and resilient overall, despite a significant increase in local human and climactic stressors (Shelton et al.~2016). Assessing the relevance of managing for human impacts in the Salish Sea will therefore require a deeper understanding of seagrass and invertebrate responses to stressors and the mechanisms (e.g., dispersal) that allow for resilience to these stressors. Ultimately, refining and validating our models will increase their utility and promote their incorporation into broader marine spatial planning efforts.''
-  \end{itemize}
-\end{itemize}
+(*3rd: assumptions and limitations)
+
+When using and adapting the data for future studies, certain assumptions need to be considered. - If the modification exists behind some vegetation then the impact could be less. - We use a uniform buffer, but there is a likely a distance decay for some of these activities. - No point measurements in field to confirm the severity of impacts of different modifications. Some activities are well regulated in Canada, like logging, and there may be very minimal impact. Whereas, drainage of waste and stormwater from seemingly well vegetated residential areas may have a high impact but hard measure. - Meadows that aren't right on the coast may not experience the same level of impacts as an intertidal meadow. - Ultimately, quantifying severity and vulnerability will increase the utility of this dataset for future marine spatial planning and management efforts. (should also work in to this idea something about this is connectivity terrestrial landscape features with seascape ecology.)
+
 \hypertarget{data-availability}{%
 \section{Data availability}\label{data-availability}}
 
-Link to github repo
+Link to code in github repo Link to dataset wherever it gets hosted
 
 \clearpage
 

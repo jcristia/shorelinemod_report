@@ -2,7 +2,11 @@
 
 ## Seagrass spatial data
 
-Eelgrass (*Z. marina*) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, *Zostera japonica*, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km^2^ in size [@Murphy2021a]. We used a spatial dataset of seagrass in the Salish Sea compiled in @Cristiani2021, which consists of surveyed and modeled data from a variety of government and non-governmental sources. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the dataset, and it is best used for coarse estimates of extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure \@ref:studyareafig).
+Eelgrass (*Z. marina*) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, *Zostera japonica*, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km^2^ in size [@Murphy2021a]. We used a spatial dataset of seagrass in the Salish Sea compiled in @Cristiani2021, which consists of surveyed and modeled data from a variety of government and non-governmental sources. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the dataset, and it is best used for coarse estimates of extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure \@ref(fig:studyareafig)).
+
+```{r studyareafig, fig.pos="H", fig.cap = "Study area. Finish caption on seagrass and bioregions."}
+knitr::include_graphics(here::here("figures/01_studyarea.png"))
+```
 
 ## Shoreline area adjacent to seagrass meadows
 
@@ -32,9 +36,4 @@ kbl(d, "latex", align="cl", booktabs = TRUE, caption = "Shoreline modification c
   column_spec(1, latex_valign="m", width="10em") %>%
   column_spec(2, latex_valign="m", width="30em") %>%
   row_spec(0, bold=TRUE)
-```
-
-
-```{r studyareafig, fig.pos="H", fig.cap = "Study area"}
-knitr::include_graphics(here::here("figures/01_studyarea.png"))
 ```
