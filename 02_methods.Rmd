@@ -2,37 +2,39 @@
 
 ## Seagrass spatial data
 
-Eelgrass (*Z. marina*) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, *Zostera japonica*, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km^2^ in size [@Murphy2021a]. We used a spatial dataset of seagrass in the Salish Sea compiled in @Cristiani2021, which consists of surveyed and modeled data from a variety of government and non-governmental sources. The dataset includes xyz meadows in the Strait of Georgia Bioregion as well as meadows in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion.
+Eelgrass (*Z. marina*) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, *Zostera japonica*, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km^2^ in size [@Murphy2021a]. We used a spatial dataset of seagrass in the Salish Sea compiled in @Cristiani2021, which consists of surveyed and modeled data from a variety of government and non-governmental sources. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the dataset, and it is best used for coarse estimates of extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure \@ref:studyareafig).
 
-## Shoreline area
+## Shoreline area adjacent to seagrass meadows
 
-Remember, the methods should be the most detailed part.
-
-
-
-- Justification (cite DFO reports, Iacarella, Nagel)
-- Adjusting seagrass meadows (or just generally say we created it at the nearest shoreline)
-- General geoprocessing steps
-
-We measured shoreline modifcations within at 100m buffer onto land from a seagrass meadow.
-
-...requires generating consistent buffers from onto land. The perimeter of the meadows, however, do not always abut directly to the shoreline due to different mapping accuracies and errors, thus resulting in slightly different buffer extents on to land. Aside from a few exceptions, the majority of meadows are adjacent to coastline and therefore to create consistent buffers we adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
+Past guidelines on the width of marine riparian buffer zones for protecting sensitive habitat typically range from 50-150 meters [@Lemieux2004; @Levings2001]. We followed the methodology in a similar study of anthropogenic impacts [@Iacarella2018] and examined shoreline modifications within 100 m of the coastline adjacent to each seagrass meadow. Quantifying modifications within a buffer zone requires generating consistent buffers from all meadows onto land. The perimeters of meadows, however, do not always exactly border the shoreline due to variable mapping accuracies and errors, as well as some meadows only existing in the subtidal zone. This results in slighlty different buffer extents on to land. Aside from a few exceptions, the majority of meadows are in close proximity to a coastline, and therefore, to create consistent width buffers on land we first adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
 
 
 ## Shoreline modifications
 
-- Modifications we are looking for and why (Emily's 2020 paper has some additional citations for impacts that I don't have)
-- Also, will need to say why I'm not including docks - its categorized elsewhere because of different impacts.
-- digitizing - general rules
-- attributes
+To quantify shoreline modification adjacent to seagrass, we identified any structures (e.g. buildings, houses) and areas de-vegetated from their natural state (e.g. lawns, logged areas, agriculture, armoured shoreline) within the 100 meter buffer. De-vegetated areas can increase nutrient run-off from agricultural areas and sewage outfalls potentially resulting in eutrophication [@hauxwell2003; @Quiros2017; @vandermeulen2005]. Hardened and de-vegated areas may also increase the outflow of sedimentation resulting in decreased light levels in seagrass meadows [@Dethier2016; @Todd2019; @Vandermeulen2012].
 
-## Postprocessing
+Shoreline modifications were digitized from satellite and aerial imagery in Google Earth Pro. The most recent imagery available was used, but the dates of the imagery varied across the study area. The majority of roads were included using an existing provincial dataset (Province of British Columbia - Digital Road Atlas). This dataset consists of linear features which were buffered using the number of lanes and standard lane widths. Modifications were classified into six categories: road, residential, cropland, industrial, greenspace, unclear. Within each category, an additional descriptor was also listed (Table \@ref(tab:modifications)). Overwater structures (e.g. floathomes, docks, aquaculture) were not considered to be shoreline modifications as these are associated with a different suite of impacts (e.g. shading, boat traffic), and these features were captured in a separate study.
 
-- Roads
-- General geoprocessing steps
-- Calculate as percentage of buffer and associate as attribute
+To quantify the overall level of shoreline modification we totaled the area of all modification types per buffered area and calculated the percent of the buffered area that is modified. The percent modified was then associated back with the adjacent seagrass meadow. 
+
+```{r modifications}
+d <- data.frame(
+  Modification = c("Road", "Residential", "Industrial", "Cropland", "Greenspace", "Unclear"),
+  Subcategory_descriptors = c("paved; dirt; rail", "house; RV; lighthouse", "logging; airport; general development; parking; storage; marina; church; electrical; ferry; hospital; train yard; shipping", "crop; fishfarm", "cleared; campground; golf; park; recreation", "unclear") 
+  )
+
+kbl(d, "latex", align="cl", booktabs = TRUE, caption = "Shoreline modification classifications and descriptors",
+    col.names = c("Modification", "Subcategory descriptors"),
+    linesep = "\\addlinespace",
+    position='h'
+    ) %>%
+  kable_styling(font_size=9) %>%
+  column_spec(1, latex_valign="m", width="10em") %>%
+  column_spec(2, latex_valign="m", width="30em") %>%
+  row_spec(0, bold=TRUE)
+```
+
 
 ```{r studyareafig, fig.pos="H", fig.cap = "Study area"}
 knitr::include_graphics(here::here("figures/01_studyarea.png"))
 ```
-

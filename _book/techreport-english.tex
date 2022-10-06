@@ -173,7 +173,7 @@ Sidney, British Columbia, V8L 4B2, Canada\\}
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-The health and functioning of coastal marine ecosystems are under threat from a variety of human activities (\protect\hyperlink{ref-Halpern2019}{Halpern et al. 2019}). Coastal activities such as agriculture, industrial and residential development, forestry, and shoreline hardening can create pressures on the marine environment. A modified shoreline may alter levels of sedimentation, nutrient runoff, pollution, and wave energy (\protect\hyperlink{ref-Todd2019}{Todd et al. 2019}). For coastal biogenic habitat in British Columbia such as seagrass, these pressures may impact seagrass productivity and survival, and thus impact the community of species that rely on seagrass (\protect\hyperlink{ref-Iacarella2018}{Iacarella et al. 2018}; \protect\hyperlink{ref-Nahirnick2019}{Nahirnick et al. 2019}; \protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). Therefore, knowing the presence of shoreline modifications adjacent to seagrass would allow us to predict ecological impacts and understand seagrass ecosystem dynamics in a broader seascape context.
+The health and functioning of coastal marine ecosystems are under threat from a variety of human activities (\protect\hyperlink{ref-Halpern2019}{Halpern et al. 2019}). Coastal activities such as agriculture, industrial and residential development, forestry, and shoreline hardening can create pressures on the marine environment. A modified shoreline may alter levels of sedimentation, nutrient runoff, pollution, and wave energy (\protect\hyperlink{ref-Dethier2016}{Dethier et al. 2016}; \protect\hyperlink{ref-Todd2019}{Todd et al. 2019}). For coastal biogenic habitat in British Columbia such as seagrass, these pressures may impact seagrass productivity and survival, and thus impact the community of species that rely on seagrass (\protect\hyperlink{ref-Iacarella2018}{Iacarella et al. 2018}; \protect\hyperlink{ref-Nahirnick2019}{Nahirnick et al. 2019}; \protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). Therefore, knowing the presence of shoreline modifications adjacent to seagrass meadows would allow us to predict ecological impacts and understand seagrass ecosystem dynamics in a broader seascape context.
 
 Assessing human activities for an entire coastal region is generally done at broad spatial scales. For example, impact mapping and assessments for all of BC have been done with a 2 km+ spatial resolution (\protect\hyperlink{ref-ClarkeMurray2015}{Clarke Murray et al. 2015}), which exceeds the size of many seagrass meadows as well as the size of the shoreline region which may be locally impacting a meadow. In addition, many spatially distinct meadows may exist close together, where only a high resolution assessment of shoreline modifications could distinguish the potential impacts between them. Fine-scale assessments of impacts to seagrass exist for the BC coast, but these are typically done in detail for only a few meadows due to logistical constraints (\protect\hyperlink{ref-Iacarella2018}{Iacarella et al. 2018}; \protect\hyperlink{ref-Nagel2020}{Nagel et al. 2020}).
 
@@ -185,49 +185,44 @@ The objective of this study is to map and quantify the shoreline modifications a
 \hypertarget{seagrass-spatial-data}{%
 \subsection{Seagrass spatial data}\label{seagrass-spatial-data}}
 
-Eelgrass (\emph{Z. marina}) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, \emph{Zostera japonica}, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km\textsuperscript{2} in size (\protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). We used a spatial dataset of seagrass in the Salish Sea compiled in Cristiani et al. (\protect\hyperlink{ref-Cristiani2021}{2021}), which consists of surveyed and modeled data from a variety of government and non-governmental sources. The dataset includes xyz meadows in the Strait of Georgia Bioregion as well as meadows in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion.
+Eelgrass (\emph{Z. marina}) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, \emph{Zostera japonica}, in the intertidal zone. Seagrass occurs to depths of 10 meters and can form meadows many km\textsuperscript{2} in size (\protect\hyperlink{ref-Murphy2021a}{Murphy et al. 2021}). We used a spatial dataset of seagrass in the Salish Sea compiled in Cristiani et al. (\protect\hyperlink{ref-Cristiani2021}{2021}), which consists of surveyed and modeled data from a variety of government and non-governmental sources. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the dataset, and it is best used for coarse estimates of extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure @ref:studyareafig).
 
-\hypertarget{shoreline-area}{%
-\subsection{Shoreline area}\label{shoreline-area}}
+\hypertarget{shoreline-area-adjacent-to-seagrass-meadows}{%
+\subsection{Shoreline area adjacent to seagrass meadows}\label{shoreline-area-adjacent-to-seagrass-meadows}}
 
-Remember, the methods should be the most detailed part.
-\begin{itemize}
-
-\item
-  Justification (cite DFO reports, Iacarella, Nagel)
-\item
-  Adjusting seagrass meadows (or just generally say we created it at the nearest shoreline)
-\item
-  General geoprocessing steps
-\end{itemize}
-We measured shoreline modifcations within at 100m buffer onto land from a seagrass meadow.
-
-\ldots requires generating consistent buffers from onto land. The perimeter of the meadows, however, do not always abut directly to the shoreline due to different mapping accuracies and errors, thus resulting in slightly different buffer extents on to land. Aside from a few exceptions, the majority of meadows are adjacent to coastline and therefore to create consistent buffers we adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
+Past guidelines on the width of marine riparian buffer zones for protecting sensitive habitat typically range from 50-150 meters (\protect\hyperlink{ref-Levings2001}{Levings and Jamieson 2001}; \protect\hyperlink{ref-Lemieux2004}{Lemieux et al. 2004}). We followed the methodology in a similar study of anthropogenic impacts (\protect\hyperlink{ref-Iacarella2018}{Iacarella et al. 2018}) and examined shoreline modifications within 100 m of the coastline adjacent to each seagrass meadow. Quantifying modifications within a buffer zone requires generating consistent buffers from all meadows onto land. The perimeters of meadows, however, do not always exactly border the shoreline due to variable mapping accuracies and errors, as well as some meadows only existing in the subtidal zone. This results in slighlty different buffer extents on to land. Aside from a few exceptions, the majority of meadows are in close proximity to a coastline, and therefore, to create consistent width buffers on land we first adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
 
 \hypertarget{shoreline-modifications}{%
 \subsection{Shoreline modifications}\label{shoreline-modifications}}
-\begin{itemize}
 
-\item
-  Modifications we are looking for and why (Emily's 2020 paper has some additional citations for impacts that I don't have)
-\item
-  Also, will need to say why I'm not including docks - its categorized elsewhere because of different impacts.
-\item
-  digitizing - general rules
-\item
-  attributes
-\end{itemize}
-\hypertarget{postprocessing}{%
-\subsection{Postprocessing}\label{postprocessing}}
-\begin{itemize}
+To quantify shoreline modification adjacent to seagrass, we identified any structures (e.g.~buildings, houses) and areas de-vegetated from their natural state (e.g.~lawns, logged areas, agriculture, armoured shoreline) within the 100 meter buffer. De-vegetated areas can increase nutrient run-off from agricultural areas and sewage outfalls potentially resulting in eutrophication (\protect\hyperlink{ref-hauxwell2003}{Hauxwell et al. 2003}; \protect\hyperlink{ref-vandermeulen2005}{Vandermeulen 2005}; \protect\hyperlink{ref-Quiros2017}{Quiros et al. 2017}). Hardened and de-vegated areas may also increase the outflow of sedimentation resulting in decreased light levels in seagrass meadows (\protect\hyperlink{ref-Vandermeulen2012}{Vandermeulen et al. 2012}; \protect\hyperlink{ref-Dethier2016}{Dethier et al. 2016}; \protect\hyperlink{ref-Todd2019}{Todd et al. 2019}).
 
-\item
-  Roads
-\item
-  General geoprocessing steps
-\item
-  Calculate as percentage of buffer and associate as attribute
-\end{itemize}
+Shoreline modifications were digitized from satellite and aerial imagery in Google Earth Pro. The most recent imagery available was used, but the dates of the imagery varied across the study area. The majority of roads were included using an existing provincial dataset (Province of British Columbia - Digital Road Atlas). This dataset consists of linear features which were buffered using the number of lanes and standard lane widths. Modifications were classified into six categories: road, residential, cropland, industrial, greenspace, unclear. Within each category, an additional descriptor was also listed (Table~\ref{tab:modifications}). Overwater structures (e.g.~floathomes, docks, aquaculture) were not considered to be shoreline modifications as these are associated with a different suite of impacts (e.g.~shading, boat traffic), and these features were captured in a separate study.
+
+To quantify the overall level of shoreline modification we totaled the area of all modification types per buffered area and calculated the percent of the buffered area that is modified. The percent modified was then associated back with the adjacent seagrass meadow.
+\begin{table}[h]
+
+\caption{\label{tab:modifications}Shoreline modification classifications and descriptors}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\centering\arraybackslash}m{10em}>{\raggedright\arraybackslash}m{30em}}
+\toprule
+\textbf{Modification} & \textbf{Subcategory descriptors}\\
+\midrule
+Road & paved; dirt; rail\\
+\addlinespace
+Residential & house; RV; lighthouse\\
+\addlinespace
+Industrial & logging; airport; general development; parking; storage; marina; church; electrical; ferry; hospital; train yard; shipping\\
+\addlinespace
+Cropland & crop; fishfarm\\
+\addlinespace
+Greenspace & cleared; campground; golf; park; recreation\\
+\addlinespace
+Unclear & unclear\\
+\bottomrule
+\end{tabular}
+\end{table}
 \begin{figure}[H]
 
 {\centering \pdftooltip{\includegraphics[width=6in]{figures/01_studyarea}}{Figure \ref{fig:studyareafig}} 
@@ -297,6 +292,11 @@ We measured shoreline modifcations within at 100m buffer onto land from a seagra
     ``managing seagrass habitat and associated species in a landscape context, in which patterns of distribution, dispersal, and impacts will interact to influence regional management strategies (Murphy et al.~2021b). Although eelgrass is declining globally (Dunic et al.~2021), eelgrass in nearby Puget Sound, Washington is stable and resilient overall, despite a significant increase in local human and climactic stressors (Shelton et al.~2016). Assessing the relevance of managing for human impacts in the Salish Sea will therefore require a deeper understanding of seagrass and invertebrate responses to stressors and the mechanisms (e.g., dispersal) that allow for resilience to these stressors. Ultimately, refining and validating our models will increase their utility and promote their incorporation into broader marine spatial planning efforts.''
   \end{itemize}
 \end{itemize}
+\hypertarget{data-availability}{%
+\section{Data availability}\label{data-availability}}
+
+Link to github repo
+
 \clearpage
 
 \hypertarget{references}{%
@@ -312,14 +312,26 @@ Clarke Murray, C., Agbayani, S., Alidina, H.M., and Ban, N.C. 2015. \link{https:
 \leavevmode{\hypertarget{ref-Cristiani2021}{}}%
 Cristiani, J., Rubidge, E., Forbes, C., Moore-Maley, B., and O'Connor, M.I. 2021. \link{https://doi.org/10.3389/fmars.2021.717469}{A {Biophysical Model} and {Network Analysis} of {Invertebrate Community Dispersal Reveals Regional Patterns} of {Seagrass Habitat Connectivity}}. Frontiers in Marine Science 8: 1--19.
 
+\leavevmode{\hypertarget{ref-Dethier2016}{}}%
+Dethier, M.N., Raymond, W.W., McBride, A.N., Toft, J.D., Cordell, J.R., Ogston, A.S., Heerhartz, S.M., and Berry, H.D. 2016. \link{https://doi.org/10.1016/j.ecss.2016.03.033}{Multiscale impacts of armoring on {Salish Sea} shorelines: {Evidence} for cumulative and threshold effects}. Estuarine, Coastal and Shelf Science 175: 106--117. {Elsevier Ltd}.
+
 \leavevmode{\hypertarget{ref-DFO2019}{}}%
 DFO. 2019. Design strategies for the {Northern Shelf Bioregion Marine Protected Area Network}. CSAS.
 
 \leavevmode{\hypertarget{ref-Halpern2019}{}}%
 Halpern, B.S., Frazier, M., Afflerbach, J., Lowndes, J.S., Micheli, F., O'NAHara, C., Scarborough, C., and Selko, K.A. 2019. \link{https://doi.org/10.1038/s41598-019-47201-9}{Recent pace of change in human impact on the world's ocean}. Scientific Reports 9(1): 1--8.
 
+\leavevmode{\hypertarget{ref-hauxwell2003}{}}%
+Hauxwell, J., Cebri'an, J., and Valiela, I. 2003. \link{https://doi.org/10.3354/meps247059}{Eelgrass {Zostera} marina loss in temperate estuaries: Relationship to land-derived nitrogen loads and effect of light limitation imposed by algae}. Mar. Ecol. Prog. Ser. 247: 59--73.
+
 \leavevmode{\hypertarget{ref-Iacarella2018}{}}%
 Iacarella, J.C., Adamczyk, E., Bowen, D., Chalifour, L., Eger, A., Heath, W., Helms, S., Hessing-Lewis, M., Hunt, B.P.V., MacInnis, A., O'Connor, M.I., Robinson, C.L.K., Yakimishyn, J., and Baum, J.K. 2018. \link{https://doi.org/10.1111/gcb.14090}{Anthropogenic disturbance homogenizes seagrass fish communities}. Global Change Biology 24(5): 1904--1918.
+
+\leavevmode{\hypertarget{ref-Lemieux2004}{}}%
+Lemieux, J.P., Brennan, J.S., Farrell, M., Levings, C.D., and Myers, D. 2004. {PROCEEDINGS OF THE DFO}/{PSAT SPONSORED MARINE RIPARIAN EXPERTS WORKSHOP}, {TSAWWASSEN}, {BC}, {FEBRUARY} 17-18, 2004.
+
+\leavevmode{\hypertarget{ref-Levings2001}{}}%
+Levings, C., and Jamieson, G. 2001. Marine and estuarine riparian habitats and their role in coastal ecosystems, {Pacific} region. Canadian Science Advisory Secretartiat: 41.
 
 \leavevmode{\hypertarget{ref-Murphy2021a}{}}%
 Murphy, G.E.P., Dunic, J.C., Adamczyk, E.M., Bittick, S.J., Côt'e, I.M., Cristiani, J., Geissinger, E.A., Gregory, R.S., Lotze, H.K., O'Connor, M.I., Ara'ujo, C.A.S., Rubidge, E.M., Templeman, N.D., and Wong, M.C. 2021. \link{https://doi.org/10.1139/facets-2020-0020}{From coast to coast to coast~: Ecology and management of seagrass ecosystems across {Canada}}. Facets 6: 1--41.
@@ -330,6 +342,9 @@ Nagel, E.J., Murphy, G.E.P., Fast, J., Bittick, S.J., Adamczyk, M., Connor, M.I.
 \leavevmode{\hypertarget{ref-Nahirnick2019}{}}%
 Nahirnick, N.K., Costa, M., Schroeder, S., and Sharma, T. 2019. \link{https://doi.org/10.2112/jcoastres-d-18-00112.1}{Long-{Term Eelgrass Habitat Change} and {Associated Human Impacts} on the {West Coast} of {Canada}}. Journal of Coastal Research 36(1): 30.
 
+\leavevmode{\hypertarget{ref-Quiros2017}{}}%
+Quiros, T.E.A.L., Croll, D., Tershy, B., Fortes, M.D., and Raimondi, P. 2017. \link{https://doi.org/10.1016/j.biocon.2017.03.011}{Land use is a better predictor of tropical seagrass condition than marine protection}. Biological Conservation 209: 454--463. {The Authors}.
+
 \leavevmode{\hypertarget{ref-Rubidge2020}{}}%
 Rubidge, E., Jeffery, S., Gregr, E.J., Gale, K.S.P., and Frid, A. 2020. Assessment of nearshore features in the {Northern Shelf Bioregion} against criteria for determining {Ecologically} and {Biologically Significant Areas} ( {EBSAs} ). DFO Canadian Science Advisory Secretariat. {Canadian Science Advisory Secretariat}.
 
@@ -338,6 +353,12 @@ Todd, P.A., Heery, E.C., Loke, L.H.L., Thurstan, R.H., Kotze, D.J., and Swan, C.
 
 \leavevmode{\hypertarget{ref-UNCBD2008}{}}%
 UN CBD. 2008. Decision adopted by the conference of the parties to the convention on biological diversity at its ninth meeting. UNEP/CBD/COP/DEC/IX/20.
+
+\leavevmode{\hypertarget{ref-vandermeulen2005}{}}%
+Vandermeulen, H. 2005. Assessing {Marine Habitat Sensitivity}: {A} case study with eelgrass ({Zostera} marina {L}.) And kelps ({Laminaria}, {Macrocystis}). {DFO Canadian Science Advisory Secretariat, Fisheries and Oceans Canada}.
+
+\leavevmode{\hypertarget{ref-Vandermeulen2012}{}}%
+Vandermeulen, H., Surette, J., and Skinner, M.A. 2012. Responses of {Eelgrass} ({\emph{Zostera}}{ \emph{Marina} }{\emph{L}}{\emph{.}}) To stress. DFO Can. Sci. Advis. Sec. Res. Doc. 2011/095. vi + 43 p.
 
 \end{CSLReferences}
 \end{document}
