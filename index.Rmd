@@ -5,7 +5,7 @@ year: 2022
 report_number: nnn
 author: |
   John M. Cristiani^1^
-  Katherine H. Bannar-Martin^2^ and
+  Katherine H. Bannar-Martin^1^ and
   Emily M. Rubidge^2^
 author_list: "Cristiani, J.C., Bannar-Martin, K.H, and Rubidge, E.M."
 region: Pacific Region
