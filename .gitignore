@@ -17,4 +17,6 @@ data
 *.knit.md
 *.log
 *.Rproj
+*.code-workspace
 
+shorelinemod_analysis/shorelinemod_analysis.gdb
