@@ -22,3 +22,6 @@ templates
 shorelinemod_analysis/shorelinemod_analysis.gdb
 shorelinemod_analysis/.backups
 shorelinemod_analysis/shorline_mapping_explore.aprx
+
+*.docx
+*.pdf
