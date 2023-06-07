@@ -4,13 +4,12 @@
 .DS_Store
 .here
 
-knitr-cache-docx
-knitr-cache-pdf
-knitr-cache-tex
-knitr-figs-docx
-knitr-figs-pdf
-REFERENCE_ARCHIVE
-data
+_book
+bib
+csas-style
+csl
+figures
+templates
 
 *.aux
 *.html
@@ -18,5 +17,8 @@ data
 *.log
 *.Rproj
 *.code-workspace
+*.upb
 
 shorelinemod_analysis/shorelinemod_analysis.gdb
+shorelinemod_analysis/.backups
+shorelinemod_analysis/shorline_mapping_explore.aprx

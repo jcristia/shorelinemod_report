@@ -43,13 +43,13 @@ arcpy.PairwiseClip_analysis('sgpolys_01_repairgeo', 'sg_phd_mbg_noUS', 'sgpolys_
 
 # Select from phd where intersecting with dfo, invert selection, copy features.
 arcpy.MakeFeatureLayer_management('sg_phd_01_clip', 'temp_phd')
-arcpy.SelectLayerByLocation_management('temp_phd', 'INTERSECT', 'sgpolys_02_clip', invert_spatial_relationship='INVERT')
+arcpy.SelectLayerByLocation_management('temp_phd', 'INTERSECT', 'sgpolys_02_clip', search_distance=200, invert_spatial_relationship='INVERT')
 arcpy.CopyFeatures_management('temp_phd', 'sg_phd_02_noIntersect')
 arcpy.Delete_management('temp_phd')
 
 # Select from dfo where intersecting with phd, invert selection, copy features.
 arcpy.MakeFeatureLayer_management('sgpolys_02_clip', 'temp_dfo')
-arcpy.SelectLayerByLocation_management('temp_dfo', 'INTERSECT', 'sg_phd_01_clip', invert_spatial_relationship='INVERT')
+arcpy.SelectLayerByLocation_management('temp_dfo', 'INTERSECT', 'sg_phd_01_clip', search_distance=200, invert_spatial_relationship='INVERT')
 arcpy.CopyFeatures_management('temp_dfo', 'sgpolys_03_noIntersect')
 arcpy.Delete_management('temp_dfo')
 
@@ -133,7 +133,7 @@ arcpy.SelectLayerByLocation_management('temp_phd', 'INTERSECT', 'shorezone', sea
 arcpy.CopyFeatures_management('temp_phd', 'sg_phd_coastmatch_noIntersect_shorezone')
 arcpy.Delete_management('temp_phd')
 
-# Select from dfo where intersecting with phd, invert selection, copy features.
+# Select from shorezone where intersecting with phd, invert selection, copy features.
 arcpy.MakeFeatureLayer_management('shorezone', 'temp_sz')
 arcpy.SelectLayerByLocation_management('temp_sz', 'INTERSECT', sg_phd_coastmatch, search_distance=100, invert_spatial_relationship='INVERT')
 arcpy.CopyFeatures_management('temp_sz', 'shorezone_noIntersect')
