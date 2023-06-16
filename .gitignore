@@ -10,6 +10,7 @@ csas-style
 csl
 figures
 templates
+mapping
 
 *.aux
 *.html
