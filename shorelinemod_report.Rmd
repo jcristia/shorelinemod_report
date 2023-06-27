@@ -11,7 +11,9 @@ The objective of this project is to map and quantify the shoreline modifications
 
 ## Seagrass spatial data
 
-Eelgrass (*Z. marina*) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, *Zostera japonica*, in the intertidal zone. Seagrass occurs to depths of up to 10 meters and can form meadows many km^2^ in size [@Murphy2021a]. We used a spatial dataset of seagrass in the Salish Sea compiled in 2017 for @Cristiani2021. This dataset consists of surveyed and modeled data from a variety of government and non-governmental sources - primarily the British Columbia Marine Conservation Atlas (BCMCA 2011) and the ShoreZone coastal mapping inventory [@coastalandoceanresources2017] (Table \@ref(tab:eelgrasstable)). Shoreline data are linear features generated from aerial imagery that classify the ecological features of the BC coast including eelgrass. In @CEC2016, these linear features were combined with bathymetric data to generate predictions of eelgrass extent [@reshitnyk2016]. Due to the combination of data with varying collection methodologies and error, there is high uncertainty in the accuracy of our dataset, and it is best used for coarse estimates of presence and extent. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure \@ref(fig:studyareafig)).
+Eelgrass (*Z. marina*) is the primary subtidal and intertidal meadow-forming seagrass in British Columbia. Meadows may also consist of the non-native seagrass, *Zostera japonica*, in the intertidal zone. Seagrass occurs to depths of up to 10 meters and can form meadows many km^2^ in size [@Murphy2021a]. We used a spatial dataset of seagrass in the Salish Sea compiled in 2018 for @Cristiani2021. This dataset consists of surveyed and modeled data from a variety of government and non-governmental sources - primarily the British Columbia Marine Conservation Atlas (BCMCA 2011) and the ShoreZone coastal mapping inventory [@coastalandoceanresources2017] (Table \@ref(tab:eelgrasstable)). Shoreline data are linear features generated from aerial imagery that classify the ecological features of the BC coast including eelgrass. In @CEC2016, these linear features were combined with bathymetric data to generate predictions of eelgrass extent [@reshitnyk2016]. The dataset includes 685 spatially distinct meadows across the Strait of Georgia Bioregion as well as in the southern portions of the Northern Shelf Bioregion and Southern Shelf Bioregion (Figure \@ref(fig:studyareafig)).
+
+Due to the combination of data with varying collection methodologies and error, there is uncertainty in the accuracy of our dataset, and it is best used for coarse estimates of presence and extent. Since the time of our analysis, there has been additional eelgrass mapping and refining of the existing datasets. A comparison to a new DFO dataset shows areas where our dataset may overpredict presence and where additional meadows have been added. In some cases, the polygons of the newer dataset are more precise (i.e., multiple small polygons that are represented as one large general polygon in the earlier dataset), however, these locations would not alter our analysis of shoreline modification. More significant, are areas where the datasets do not overlap. Our dataset generally has more polygons in the Discovery Islands, Lasqueti Island, Howe Sound, and the Gulf Islands, whereas the newer dataset fills data gaps in areas such as Sechelt Inlet and Saanich Inlet (Figure \@ref(fig:meadowDiff)). A newer ShoreZone dataset fills gaps along the Sunshine Coast, Texada Island, and near Vancouver (Figure \@ref(fig:meadowDiffShorezone)).
 
 ```{r eelgrasstable}
 df <- data.frame(
@@ -40,14 +42,14 @@ knitr::include_graphics(here::here("figures/01_studyarea.png"))
 
 ## Shoreline area adjacent to seagrass meadows
 
-Previous guidelines on the width of marine riparian buffer zones for protecting sensitive habitat typically range from 50-150 meters [@Lemieux2004; @Levings2001]. We followed the methodology in a similar study of anthropogenic impacts [@Iacarella2018] and examined shoreline modifications within 100 m of the coastline adjacent to each seagrass meadow. Quantifying modifications within a buffer zone requires generating consistent buffers from all meadows onto land. The perimeters of meadows, however, do not always exactly border the shoreline due to variable mapping accuracies and errors, as well as some meadows only existing in the subtidal zone. This would result in slightly different buffer extents on to land. Aside from a few exceptions, the majority of meadows are in close proximity to a coastline, and therefore, to create consistent width buffers on land we first adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
+Previous guidelines on the width of marine riparian buffer zones for protecting sensitive habitat typically range from 50-150 meters [@Lemieux2004; @Levings2001]. We followed the methodology in a similar study of anthropogenic impacts [@Iacarella2018] and examined shoreline modifications within 100 m of the coastline adjacent to each seagrass meadow. For our analysis we used the high water coastline from the 1:20,000 scale Freshwater Atlas provincial dataset [@geobc2010]. Quantifying modifications within a buffer zone requires generating consistent buffers from all meadows onto land. The perimeters of meadows, however, do not always exactly border the shoreline due to variable mapping accuracies and errors, as well as some meadows only existing in the subtidal zone. This would result in slightly different buffer extents on to land. Aside from a few exceptions, the majority of meadows are in close proximity to a coastline, and therefore, to create consistent width buffers on land we first adjusted the perimeter of meadows to match the coastline using digitization tools in ArcGIS.
 
 
 ## Quantifying shoreline modifications
 
-To quantify shoreline modification adjacent to seagrass, we identified any structures (e.g. buildings, houses) and areas de-vegetated from their natural state (e.g. lawns, logged areas, agriculture, armoured shoreline) within the 100 meter buffer. De-vegetated areas can increase nutrient run-off from agricultural areas and sewage outfalls, potentially resulting in eutrophication [@hauxwell2003; @Quiros2017; @vandermeulen2005]. Hardened and de-vegated areas may also increase the outflow of sedimentation resulting in decreased light levels in seagrass meadows [@Dethier2016; @Todd2019; @Vandermeulen2012].
+To quantify shoreline modification adjacent to seagrass, we identified any structures (e.g. buildings, houses) and areas de-vegetated from their natural state (e.g. lawns, logged areas, agriculture, armoured shoreline) within the 100 meter buffer from the high water line towards land. De-vegetated areas can increase nutrient run-off from agricultural areas and sewage outfalls, potentially resulting in eutrophication [@hauxwell2003; @Quiros2017; @vandermeulen2005]. Hardened and de-vegated areas may also increase the outflow of sedimentation resulting in decreased light levels in seagrass meadows [@Dethier2016; @Todd2019; @Vandermeulen2012].
 
-Shoreline modifications were digitized from satellite and aerial imagery in Google Earth Pro. The most recent imagery available was used, but the dates of the imagery varied across the study area. The majority of roads were included using an existing provincial dataset (Province of British Columbia - Digital Road Atlas). This dataset consists of linear features which were buffered using the number of lanes and standard lane widths. Modifications were classified into six categories: road, residential, agriculture, industrial, greenspace, and unclear. Within each category, an additional descriptor was also listed if relevant (Table \@ref(tab:modifications)). Overwater structures (e.g. floathomes, docks, aquaculture) were not considered to be shoreline modifications as these are associated with a different suite of impacts (e.g. shading, boat traffic), and these features were captured in separate studies [@cristiani2022; @Iacarella2019].
+Shoreline modifications were digitized from satellite and aerial imagery in Google Earth Pro (see Appendix Table \@ref(tab:workflow) for detailed processing steps). We used the imagery on Google Earth that was available during December 2020 – January 2021. The majority of roads were included using an existing provincial dataset (Province of British Columbia - Digital Road Atlas). This dataset consists of linear features which were buffered using the number of lanes and standard lane widths. Modifications were classified into six categories: road, residential, agriculture, industrial, greenspace, and unclear. Within each category, an additional descriptor was also listed if relevant (Table \@ref(tab:modifications)). Overwater structures (e.g. floathomes, docks, aquaculture) were not considered to be shoreline modifications as these are associated with a different suite of impacts (e.g. shading, boat traffic), and these features were captured in separate studies [@cristiani2022; @Iacarella2019].
 
 To quantify the overall level of shoreline modification we totaled the area of all modification types per buffered area and calculated the percent of the buffered area that is modified. The percent modified was then associated back with the adjacent seagrass meadow. 
 
@@ -70,7 +72,7 @@ kbl(d, "latex", align="cl", booktabs = TRUE, caption = "Shoreline modification p
 
 # Results
 
-The spatial distribution of shoreline modifications varied across the region. Examples of the extent and diversity of modifications are shown in Figure \@ref(fig:exampleareas), and the full dataset is accessible online (see Data availability section). As expected, the seagrass meadows with the highest total levels of adjacent shoreline modification occurred near population centers (Figure \@ref(fig:percentmod)). The lowest levels of modification occurred near smaller islands and in the northern part of the study area (i.e. Johnstone Strait). The dominant modification type across the study area was residential development. Agriculture varied by latitude with most coastal agriculture occurring in the southern portion of the study area (Figure \@ref(fig:percentmodpertype)).
+The spatial distribution of shoreline modifications varied across the region. Examples of the extent and diversity of modifications are shown in Figure \@ref(fig:exampleareas), and the full dataset is accessible online (see Data availability section). As expected, the seagrass meadows with the highest total levels of adjacent shoreline modification occurred near population centers. The lowest levels of modification occurred near smaller islands and in the northern part of the study area (i.e. Johnstone Strait). The median amount of modified shoreline was 9%. Of the 685 meadows, 19% has no modifications, 9% were more than 50% modified, and 1% were more than 80% modified (Figure \@ref(fig:percentmod)). The dominant modification type across the study area was residential development (Figure \@ref(fig:percentmodpertype)a). All other modification types had relatively low values, except at two meadows (Crofton, Duncan Bay) where the shoreline was more than 75% modified by industrial development (Figure \@ref(fig:percentmodpertype)c). The dominant modification type across the study area was residential development. Agriculture varied by latitude with most coastal agriculture occurring in the southern portion of the study area (Figure \@ref(fig:percentmodpertype)b).
 
 ```{r exampleareas, fig.pos="H", fig.cap = "Shoreline modifications within buffered areas adjacent to seagrass meadows. All buffers are 100 meters wide, as measured from the coastline. The six selected areas are shown for example and do not imply any significance over other areas."}
 knitr::include_graphics(here::here("figures/02_shorelinemod_examples.png"))
@@ -88,7 +90,7 @@ knitr::include_graphics(here::here("figures/04_shorelinemod_perctype.png"))
 
 By quantifying shoreline modifications adjacent to seagrass meadows, we've provided a novel high resolution dataset for documenting land use over a large spatial extent and predicting potential impacts to nearshore ecosystems. The variation in the distribution and patterns of modifications across the region illustrate the different shoreline threats that seagrass meadows may face based on their location. While areas of high naturalness are generally targeted for conservation over degraded areas [@Rubidge2020; @UNCBD2008], other criteria such as biological diversity, productivity and connectivity may result in targeting meadows that are threatened by shoreline activities [@cristiani2022; @Rubidge2020]. If an area including a meadow is selected for management (e.g. an EBSA), then it's likely the shoreline modifications will have to be considered for possible mitigation of impacts. It will then be important to know the spatial distribution of modifications because the management action will vary with the type of modification.
 
-This analysis could be strengthened by addressing some of its assumptions and limitations. We used a uniform buffer from the coast, but there is likely a distance-decay of the impacts from certain activities, such that subtidal meadows may experience impacts differently than intertidal meadows. In addition, a narrow buffer of vegetation on the edge of the coast could be enough to mitigate the effects of a certain modifications behind this buffer. Most importantly, it will be necessary to quantify the relative severity of each modification and the vulnerability of seagrass to different pressures. For example, runoff from agricultural areas may be more damaging than runoff from residential areas [@Teck2010]. Shoreline modifications are representative of only one type of threat to seagrass, however, by quantifying severity and vulnerability scores, this data could be incorporated into larger cumulative effects analyses in which the overall impact of many stressors is quantified [@ClarkeMurray2016; @ClarkeMurray2020; @Murphy2022].  
+This analysis could be strengthened by addressing some of its assumptions and limitations. We used a uniform buffer from the coast, but there is likely a distance-decay of the impacts from certain activities, such that subtidal meadows may experience impacts differently than intertidal meadows. In addition, a narrow buffer of vegetation on the edge of the coast could be enough to mitigate the effects of certain modifications behind this buffer. Most importantly, it will be necessary to quantify the relative severity of each modification and the vulnerability of seagrass to different pressures. For example, runoff from agricultural areas may be more damaging than runoff from residential areas [@Teck2010]. Shoreline modifications are representative of only one type of threat to seagrass, however, by quantifying severity and vulnerability scores, this data could be incorporated into larger cumulative effects analyses in which the overall impact of many stressors is quantified [@ClarkeMurray2016; @ClarkeMurray2020; @Murphy2022]. Lastly, since the time of our analysis eelgrass has continued to be mapped and datasets refined. It will be important to view this shoreline modifications dataset as a starting point and to continue to develop it in conjunction with eelgrass datasets. 
 
 Our analysis emphasizes the importance of managing seagrass and the biodiversity it supports in the spatial context of the larger seascape and landscape. While seagrass area is declining globally, it appears to be stable in the north Pacific [@Dunic2021], and in the Washington state portion of the Salish Sea, seagrass has been resilient despite an increase in human activities [@Shelton2016]. To further enhance successful seagrass management, understanding exactly which activities may be impacting seagrass locally will likely require a more precise analysis of human activities, the stressors they generate, and the vulnerability of seagrass to these stressors. Therefore, it will be important to continue to gather the high resolution spatial data that informs the initial stage of these analyses.
 
@@ -96,7 +98,7 @@ Our analysis emphasizes the importance of managing seagrass and the biodiversity
 # Data availability
 
 The code used to generate the dataset for this study is available at <Link to code in github repo>. *(perhaps consider moving just the one script to the report repo)*\
-*Link to dataset wherever it gets hosted*
+The shoreline modification dataset is available at: *Link to dataset wherever it gets hosted*
 
 
 \clearpage
@@ -115,23 +117,37 @@ The code used to generate the dataset for this study is available at <Link to co
 `r if(knitr:::is_latex_output()) '% begin csasdown appendix'`
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 \clearpage
-# THE FIRST APPENDIX {#app:first-appendix}
+# SEAGRASS DATASET DIFFERENCES {#app:first-appendix}
 
-Appendices can be in one file, or if they are larger than a couple of pages you should add a new file for each new appendix. In the first appendix, you **must** include two special lines of code at the top to tell `csasdown` that you are now numbering sections as appendices. Look in `05_appendices.Rmd` to see these. The last line of your last appendix **must** be another special line of code which tells `csasdown` to end the appendices sections.
-
-\clearpage
-
-# THE SECOND APPENDIX, FOR FUN {#app:second-appendix}
-
-The label `#app:` in the appendix section headers tell `csasdown` to start a new appendix, and the next letter in the alphabet will be used for the appendix, and prepended to figure and table names.
-
-```{r meadowDiff, fig.pos="H", fig.cap = "Only differences are shown. Only spatially distinct."}
+```{r meadowDiff, fig.pos="H", fig.cap = "The areas of difference between the dataset used in this analysis (created in 2018 for Cristiani et al. 2021) and a newer seagrass spatial dataset from DFO. Only areas where datasets do not overlap are shown."}
 knitr::include_graphics(here::here("figures/Seagrass_dataset_differences_1.png"))
 ```
 
-```{r meadowDiffShorezone, fig.pos="H", fig.cap = "Full dataset shown. Just distinct parts of shorezone."}
+```{r meadowDiffShorezone, fig.pos="H", fig.cap = "The recent additions to the ShoreZone eelgrass dataset that are not present in the datset used in this study."}
 knitr::include_graphics(here::here("figures/Seagrass_dataset_differences_2.png"))
 ```
+
+\clearpage
+
+# QUANTIFYING SHORELINE MODIFICATIONS WORKFLOW {#app:second-appendix}
+
+```{r workflow}
+d <- data.frame(
+  Modification = c("Road", "Residential", "Industrial", "Agriculture", "Greenspace", "Unclear"),
+  Subcategory_descriptors = c("paved; dirt; rail", "house; RV; lighthouse", "logging; airport; general development; parking; storage; marina; church; electrical; ferry; hospital; train yard; shipping", "crop; fishfarm", "cleared; campground; golf; park; recreation", "unclear") 
+  )
+
+kbl(d, "latex", align="cl", booktabs = TRUE, caption = "Shoreline modification primary classifications and additional subcategory descriptors.",
+    col.names = c("Modification", "Subcategory descriptors"),
+    linesep = "\\addlinespace",
+    position='h'
+    ) %>%
+  kable_styling(font_size=9) %>%
+  column_spec(1, latex_valign="m", width="10em") %>%
+  column_spec(2, latex_valign="m", width="30em") %>%
+  row_spec(0, bold=TRUE)
+```
+
 
 `r if(knitr:::is_latex_output()) '% end csasdown appendix'`
 
