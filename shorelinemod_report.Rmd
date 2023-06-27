@@ -49,7 +49,7 @@ Previous guidelines on the width of marine riparian buffer zones for protecting 
 
 To quantify shoreline modification adjacent to seagrass, we identified any structures (e.g. buildings, houses) and areas de-vegetated from their natural state (e.g. lawns, logged areas, agriculture, armoured shoreline) within the 100 meter buffer from the high water line towards land. De-vegetated areas can increase nutrient run-off from agricultural areas and sewage outfalls, potentially resulting in eutrophication [@hauxwell2003; @Quiros2017; @vandermeulen2005]. Hardened and de-vegated areas may also increase the outflow of sedimentation resulting in decreased light levels in seagrass meadows [@Dethier2016; @Todd2019; @Vandermeulen2012].
 
-Shoreline modifications were digitized from satellite and aerial imagery in Google Earth Pro (see Appendix Table \@ref(tab:workflow) for detailed processing steps). We used the imagery on Google Earth that was available during December 2020 – January 2021. The majority of roads were included using an existing provincial dataset (Province of British Columbia - Digital Road Atlas). This dataset consists of linear features which were buffered using the number of lanes and standard lane widths. Modifications were classified into six categories: road, residential, agriculture, industrial, greenspace, and unclear. Within each category, an additional descriptor was also listed if relevant (Table \@ref(tab:modifications)). Overwater structures (e.g. floathomes, docks, aquaculture) were not considered to be shoreline modifications as these are associated with a different suite of impacts (e.g. shading, boat traffic), and these features were captured in separate studies [@cristiani2022; @Iacarella2019].
+Shoreline modifications were digitized from satellite and aerial imagery in Google Earth Pro (see Appendix \@ref(app:second-appendix) for detailed workflow). We used the imagery on Google Earth that was available during December 2020 – January 2021. The majority of roads were included using an existing provincial dataset (Province of British Columbia - Digital Road Atlas). This dataset consists of linear features which were buffered using the number of lanes and standard lane widths. Modifications were classified into six categories: road, residential, agriculture, industrial, greenspace, and unclear. Within each category, an additional descriptor was also listed if relevant (Table \@ref(tab:modifications)). Overwater structures (e.g. floathomes, docks, aquaculture) were not considered to be shoreline modifications as these are associated with a different suite of impacts (e.g. shading, boat traffic), and these features were captured in separate studies [@cristiani2022; @Iacarella2019].
 
 To quantify the overall level of shoreline modification we totaled the area of all modification types per buffered area and calculated the percent of the buffered area that is modified. The percent modified was then associated back with the adjacent seagrass meadow. 
 
@@ -131,22 +131,83 @@ knitr::include_graphics(here::here("figures/Seagrass_dataset_differences_2.png")
 
 # QUANTIFYING SHORELINE MODIFICATIONS WORKFLOW {#app:second-appendix}
 
-```{r workflow}
-d <- data.frame(
-  Modification = c("Road", "Residential", "Industrial", "Agriculture", "Greenspace", "Unclear"),
-  Subcategory_descriptors = c("paved; dirt; rail", "house; RV; lighthouse", "logging; airport; general development; parking; storage; marina; church; electrical; ferry; hospital; train yard; shipping", "crop; fishfarm", "cleared; campground; golf; park; recreation", "unclear") 
-  )
+**Initial set up**
 
-kbl(d, "latex", align="cl", booktabs = TRUE, caption = "Shoreline modification primary classifications and additional subcategory descriptors.",
-    col.names = c("Modification", "Subcategory descriptors"),
-    linesep = "\\addlinespace",
-    position='h'
-    ) %>%
-  kable_styling(font_size=9) %>%
-  column_spec(1, latex_valign="m", width="10em") %>%
-  column_spec(2, latex_valign="m", width="30em") %>%
-  row_spec(0, bold=TRUE)
-```
+1. Download Google Earth Pro (GE):
+
+    * GE is being used because (1) it's free, and (2) it generally has better quality aerial imagery than what is available in ArcGIS.
+    * There are some helpful keyboard shortcuts available here, particularly "reset to top-down tilt": https://support.google.com/earth/answer/148115?hl=en 
+
+2. Open the following KMZ reference files by double clicking on them. This will launch GE:
+
+    * seagrass_buff_coast.kmz (the 100 meter inland buffers of the seagrass polygons)
+    * seagrass_original.kmz (the seagrass polygons)
+  
+3. Adjust the color and transparency as desired so that you can see the underlying imagery:
+
+    * Right click on layer > Properties > Style,Color
+    * We used a transparency of 50%
+  
+4. The layers will open up under “Temporary Places”. Right click each one and click “Save to My Places”.
+
+    * Now in the future you won’t have to add these layers and change the symbology each time. However, this actually saves a new copy in the GE folder structure, but since we are not editing these layers and worrying about where they are saved, this is not an issue.
+
+5. Click on the Time Slider in the toolbar and make sure you are using the most recent imagery.
+
+    * Google Earth may open up with older imagery.
+    * However, some of the most recent imagery is low resolution. Older imagery was used where necessary to get a better idea of polygon bounds to draw - especially for rural residential areas.
+    
+6. Open the shoreline modification file, which is the one we will be adding new data to:
+
+    * shoreline_mod_TOEDIT.kmz
+    
+7. Adjust color and transparency as desired.
+
+8. Right click each layer and "Save to My Places":
+
+    * The working copy of this file is now saved to the GE folder structure and is no longer associated with the file you first clicked on. This is fine for each session since GE saves your work automatically, whereas it does not save automatically if the layer is kept in Temporary Places.
+    * **At the end of each session you should right click on the layer and “Save Place As”. This will save it as a kmz file again, and you can overwrite the original one you first opened.**
+    * My Places data is saved here in Windows by default: C:/Users/<user>/AppData/LocalLow/Google/GoogleEarth/myplaces.kml.
+
+&nbsp;  
+
+**Shoreline modification digitizing**
+
+1. Have the seagrass_buff_coast.kmz layer visible (layer name will appear as sg_103_clipcoast).
+
+2. Zoom into a polygon that you will digitize over.
+
+3. Click once on the shoreline_mod_TOEDIT FOLDER in the left panel so that it is highlighted.
+
+4. Click on Add Polygon in the toolbar.
+
+    * A window will popup, keep this open.
+    
+5. Trace around the modified area.
+
+    * You can do individual clicks for a vertex or you can hold down for freehand.
+    * A right click will delete that last vertex.
+    * Houses were not digitized separately, unless the greenspace/treeline between them was larger than ~20m.
+    * If two buffered coastline polygons overlap, you do not need to trace the same feature for each one. This will be dealt with later in ArcGIS.
+    * The coastaline and polygons we digitized do not always line up perfectly with the imagery depending on the time window used as there is some geographic shifting between imagery of different years (variation in georeferencing of imagery).
+    * Logging areas were only digitized if the most recent imagery indicated relatively recent logging activity (~ within the past decade).
+
+6. In the pop-up, for Name, enter the sg_103_clipcoast ID number followed by an understroke and then a sequential integer.
+
+    * This is to keep a unique ID for each polygon added.
+    * e.g., 401_1 : the clipcoast ID is 401 and this is the first subpolygon drawn
+    
+7. In the description box, enter the category of modification:
+
+    * Chosen from a standard list, see Table \@ref(tab:modifications).
+    * If relevant, add a subcategory, see Table \@ref(tab:modifications). Separate each description with a semi-colon but no spaces (e.g. industrial;logging).
+    
+8. Click OK
+
+9. At the end of the session, right click on the layer and “Save Place As”. This will save it as a kmz file again, and you can overwrite the original one you first opened.
+
+
+
 
 
 `r if(knitr:::is_latex_output()) '% end csasdown appendix'`
