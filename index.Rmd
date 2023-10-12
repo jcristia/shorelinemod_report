@@ -1,7 +1,7 @@
 ---
 title: "Quantifying shoreline modifications adjacent to eelgrass meadows in the Strait of Georgia Bioregion"
 french_title: Titre ici (*Nom latin de l'espèce*)
-year: 2022
+year: 2023
 report_number: nnn
 author: |
   John M. Cristiani^1^
@@ -39,12 +39,12 @@ output:
    # will remain between compilations. If true, your changes will be lost when you compile
    copy_sty: true
    # line_nums is a toggle to show line numbers on the left side of the page. 
-   line_nums: true
+   line_nums: false
    # line_nums_mod represents showing every Nth line if line_nums is true
    line_nums_mod: 1
    # lot_lof is a toggle to show/not show the lists of tables and figures at the
    # beginning of the document
-   lot_lof: false
+   lot_lof: true
    # draft_watermark is a toggle to show/not show a DRAFT watermark across every page
    draft_watermark: false
    # highlight is the theme to use for code output. Must be one of the list given by:
@@ -68,7 +68,7 @@ knit: (function(input, ...) {
       })
 site: bookdown::bookdown_site
 link-citations: true
-bibliography: bib/refs.bib
+bibliography: bib/library_all.bib
 # Any extra LaTeX code for the header:
 header-includes:
  - \usepackage{float}
