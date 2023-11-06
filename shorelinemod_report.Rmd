@@ -97,7 +97,7 @@ Our analysis emphasizes the importance of managing seagrass and the biodiversity
 
 # Data availability
 
-Data is currently restricted to DFO Science and is available at: *Link to GISHub*, but can be made available to others upon a request to the lead author (john.cristiani\@dfo-mpo.gc.ca). The seagrass dataset contains data with sharing restrictions, however, portions of the dataset can also be made available upon request.
+The shoreline modifications dataset is currently restricted to DFO Science and is available at: https://gis-hub.ca/dataset/shoreline-modifications-eelgrass, but can be made available to others upon a request to the lead author (john.cristiani\@dfo-mpo.gc.ca). The seagrass dataset contains data with sharing restrictions, however, portions of the dataset can also be made available upon request.
 
 
 \clearpage
