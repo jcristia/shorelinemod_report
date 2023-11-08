@@ -37,14 +37,25 @@ output:
    # copy_sty is a toggle to copy the style file from the csasdown package every time you compile
    # the document. If false, any changes you have made to the style file in your project
    # will remain between compilations. If true, your changes will be lost when you compile
-   copy_sty: true
+   copy_sty: false
    # line_nums is a toggle to show line numbers on the left side of the page. 
    line_nums: false
    # line_nums_mod represents showing every Nth line if line_nums is true
    line_nums_mod: 1
    # lot_lof is a toggle to show/not show the lists of tables and figures at the
    # beginning of the document
-   lot_lof: true
+   lot_lof: false  
+   #ME: there was an issue with list of figures/tables getting placed after the abstract which the library
+   # said had to be before the abstract. This also screwed up the roman numeral numbering.
+   # Not sure if it is an error but it is commented out in the correct spot in the style file, but then
+   # it gets injected into the wrong spot if you set lot_lof to false.
+   # Solution:
+   # First generate with copy_st and lot_lof set to true. This will copy the style file over.
+   # Edit local style file that gets copied over (tech-report.sty):
+     # Lint 399, uncomment \listoffigures... (right after table of contents)
+     # Lines 414-418: comment out where they were getting placed before
+   
+     
    # draft_watermark is a toggle to show/not show a DRAFT watermark across every page
    draft_watermark: false
    # highlight is the theme to use for code output. Must be one of the list given by:
