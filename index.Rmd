@@ -7,7 +7,7 @@ author: |
   John M. Cristiani^1^
   Katherine H. Bannar-Martin^1^ and
   Emily M. Rubidge^2^
-author_list: "Cristiani, J.C., Bannar-Martin, K.H, and Rubidge, E.M."
+author_list: "Cristiani, J.M., Bannar-Martin, K.H, and Rubidge, E.M."
 region: Pacific Region
 french_region: Région du Pacifique
 isbn: "978-0-660-68394-2"
